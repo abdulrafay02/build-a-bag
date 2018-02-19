@@ -1,7 +1,7 @@
 <div id="mainProductCategoriesDiv">
   <ul class="list-inline">
     <li class="list-inline-item">
-      <a><i class="fa fa-angellist home-icon"></i></a>
+      <a><i class="fa fa-home home-icon"></i></a>
     </li>
     <li *ngFor="let product of products" class="list-inline-item">
       <a (click)="showSubCategories(product.id)" [ngClass]="{'active':activeId===product.id}">{{ product.name }}</a>
