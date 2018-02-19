@@ -1,0 +1,112 @@
+.cart-fixed-top {
+    height: 70px;
+    background-color: rgba(100,100,100,0.2);
+    border: 1px solid #999;
+    border-bottom: 0!important;
+    padding: 12px 20px 0;
+}
+.cart-fixed-bottom {
+    border: 1px solid #999;
+    border-top: 0!important;
+    background-color: rgba(100,100,100,0.2);
+    padding: 20px;
+}
+.cart-sidebar {
+    padding: 0;
+    border: 1px solid #999;
+    border-bottom: 0!important;
+    border-top: 0!important;
+    background-color: rgba(100,100,100,0.2);
+    height: 450px;
+    overflow: auto;
+    z-index: 60;
+}
+.cart-fixed-top .cart-total {
+    color: #21a114;
+    font-size: 20px;
+    font-weight: 500;
+    display: inline-block;
+    margin-right: 3px;
+    vertical-align: middle;
+}
+.cart-fixed-top .cart-total-note {
+    color: #FFF;
+    font-size: 11px;
+    display: inline-block;
+    width: 16px;
+    height: 28px;
+    vertical-align: middle;
+    /*background: url(images/icon-info.png) no-repeat center center;*/
+    background-size: 16px 16px;
+    position: relative;
+    cursor: pointer;
+    cursor: hand;
+}
+#all-cart .bag-weight {
+    position: absolute;
+    top: 20px;
+    right: 80px;
+    width: 80px;
+    text-align: center;
+    color: #dbdbd9;
+    font-size: 12px;
+}
+#all-cart .bag-volume {
+    position: fixed;
+    bottom: 136px;
+    right: 55px;
+    text-align: right;
+    color: #dbdbd9;
+    font-size: 12px;
+}
+.cart-fixed-top h3 {
+    color: #ec8023;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+.cart-cat {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+.cart-cat h4 {
+    color: #ccc;
+    font-size: 16px;
+    margin-bottom: 0;
+    padding-right: 20px;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed #555;
+    position: relative;
+}
+.cart-cat a.missing {
+    color: #337ab7;
+    font-size: 13px;
+    /* cursor: pointer; */
+}
+.product-in-cart {
+    color: #21a114;
+    padding-left: 20px;
+    position: relative;
+    /*height: 20px;*/
+    line-height: 20px;
+}
+.cart-sidebar .dynamic-cart {
+    margin-top: 10px;
+    padding: 0 20px;
+}
+.product-in-cart .remove {
+    width: 16px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: 10px 10px;
+    cursor: pointer;
+    cursor: hand;
+    color: red;
+}
+
+#checkout {
+    color: rgb(41, 43, 44);
+    font-weight: bold;
+    font-size: 15px;
+}

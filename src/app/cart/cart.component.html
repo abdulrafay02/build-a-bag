@@ -1,0 +1,103 @@
+<div id="all-cart">
+
+  <div class="cart-fixed-top">
+    <h3>Your Cart</h3>
+    <div class="cart-total dynamic-total">{{ cartTotalAmount | currency }}</div>
+    <!-- <span class="cart-total-note">
+      <span class="tooltip">
+        * Shipping discounts at checkout
+      </span>
+    </span> -->
+    <!-- <div class="bag-weight">
+      Bag Weight:
+      <br>
+      <span class="dynamic-weight">0 lbs, 8.05 oz</span>
+    </div> -->
+    <!-- <div class="bag-volume">
+      Required Bag Volume:
+      <span class="dynamic-volume">0.66 Liters</span>
+    </div> -->
+  </div>
+
+  <div class="cart-sidebar">
+    <div class="dynamic-cart">
+
+      <div class="cart-cat">
+        <h4>Bottles:</h4>
+        <a *ngIf="selectedCategories.bottles<=0" class="missing">Missing</a>
+        <div *ngIf="selectedCategories.bottles>0">
+          <div *ngFor="let product of products">
+            <div *ngIf="product.category=='bottles'" class="product-in-cart">
+              <span class="product" data-asin="">{{ product.name }}</span>
+              <span class="remove" data-asin="" (click)="removeFromCart(product)">
+                <i class="fa fa-remove"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cart-cat">
+        <h4>Purification:</h4>
+        <a *ngIf="selectedCategories.purification<=0" class="missing">Missing</a>
+        <div *ngIf="selectedCategories.purification>0">
+          <div *ngFor="let product of products">
+            <div *ngIf="product.category=='purification'" class="product-in-cart">
+              <span class="product" data-asin="">{{ product.name }}</span>
+              <span class="remove" data-asin="" (click)="removeFromCart(product)">
+                <i class="fa fa-remove"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cart-cat">
+        <h4>Filters:</h4>
+        <a *ngIf="selectedCategories.filter<=0" class="missing">Missing</a>
+        <div *ngIf="selectedCategories.filter>0">
+          <div *ngFor="let product of products">
+            <div *ngIf="product.category=='filter'" class="product-in-cart">
+              <span class="product" data-asin="">{{ product.name }}</span>
+              <span class="remove" data-asin="" (click)="removeFromCart(product)">
+                <i class="fa fa-remove"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="product-in-cart">
+              <span class="product" data-asin="B000OR111G">Aquamira Drops (1 oz.) - [3.10 oz]</span>
+              <span class="remove" data-asin="B000OR111G"><i class="fa fa-remove"></i></span>
+            </div>
+            <div class="product-in-cart">
+              <span class="product" data-asin="B00B39KSUO">Aquamira (2 oz) - [4.95 oz]</span>
+              <span class="remove" data-asin="B00B39KSUO"><i class="fa fa-remove"></i></span>
+            </div> -->
+
+      <!-- <input type="hidden" data-title="Aquamira Drops (1 oz.)" name="ASIN.1" value="B000OR111G">
+            <input type="hidden" data-title="Aquamira Drops (1 oz.)" name="Quantity.1" value="1">
+            <input type="hidden" data-title="Aquamira (2 oz)" name="ASIN.2" value="B00B39KSUO">
+            <input type="hidden" data-title="Aquamira (2 oz)" name="Quantity.2" value="2"> -->
+
+    </div>
+
+  </div>
+
+  <div class="cart-fixed-bottom">
+
+    <form class="checkout_form" action="http://www.amazon.com/gp/aws/cart/add.html" method="GET" target="_blank">
+      <input type="hidden" name="AWSAccessKeyId" value="AKIAIM5NZM63IX357EEA">
+      <input type="hidden" name="AssociateTag" value="ebugout0a-20">
+      <div *ngFor="let c of checkoutCart; let i = index">
+        <input type="hidden" data-title="{{c.name}}" name="{{ 'ASIN.' + (i+1) }}" value="{{c.asin}}">
+        <input type="hidden" data-title="{{c.name}}" name="{{ 'Quantity.' + (i+1) }}" value="{{ c.quantity }}">
+      </div>
+
+      <input type="submit" (click)="checkout()" class="btn btn-warning" id="checkout" name="add" value="Checkout on Amazon">
+    </form>
+
+  </div>
+
+</div>

@@ -1,0 +1,22 @@
+<div id="mainProductCategoriesDiv">
+  <ul class="list-inline">
+    <li class="list-inline-item">
+      <a><i class="fa fa-angellist home-icon"></i></a>
+    </li>
+    <li *ngFor="let product of products" class="list-inline-item">
+      <a (click)="showSubCategories(product.id)" [ngClass]="{'active':activeId===product.id}">{{ product.name }}</a>
+    </li>
+  </ul>
+</div>
+<div id="subProductCategoriesDiv">
+  <ul *ngIf="showSubCat" class="list-inline">
+    <li *ngFor="let subCat of product.subCat" class="list-inline-item">
+      <a (click)="showProductFooter(subCat)" [ngClass]="{'active':activeSubCatId===subCat.id}">{{ subCat.name }}</a>
+    </li>
+  </ul>
+</div>
+
+<product-footer
+[showFooter]="showFooter"
+[subCatItems]="subCatItems">
+</product-footer>

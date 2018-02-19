@@ -1,0 +1,61 @@
+#mainProductCategoriesDiv {
+    border-bottom: 1px solid #ec8023;
+}
+#mainProductCategoriesDiv, #subProductCategoriesDiv {
+    display: block;
+    background: #000;
+    margin: 0;
+    padding: 0 35px;
+    text-align: left;
+    box-shadow: 0px 2px 5px #000;
+}
+.home-icon {
+    position: relative;
+    top: 4px;
+    color: #ec8023;
+    font-size: 27px;
+}
+#mainProductCategoriesDiv ul, #subProductCategoriesDiv ul {
+    margin: 0;
+    display: table-row;
+    width: 100%;
+    height: 100%;
+}
+#mainProductCategoriesDiv ul li, #subProductCategoriesDiv ul li {  
+    display: inline-block;
+    margin-right: 40px;
+}
+#mainProductCategoriesDiv ul li > a:hover, #subProductCategoriesDiv ul li > a:hover {
+    color: #fff !important;
+}
+#mainProductCategoriesDiv ul li > a.active, #subProductCategoriesDiv ul li > a.active {
+    color: #ec8023 !important;
+}
+
+#mainProductCategoriesDiv ul li a, #subProductCategoriesDiv ul li a {
+    height: 48px;
+    line-height: 48px;
+    color: #7b7b7b;
+    text-decoration: none!important;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 400;
+    text-shadow: 1px 1px 2px #000;
+    cursor: pointer;
+}
+
+@media (min-width: 650px) {
+    #mainProductCategoriesDiv {
+        background: #000;
+        height: 48px;
+        display: table;
+        width: 100%;
+    }
+    #mainProductCategoriesDiv ul li {
+        display: table-cell;
+        height: 48px;
+        line-height: 48px;
+        width: 1%;
+    }
+
+}

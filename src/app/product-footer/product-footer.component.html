@@ -1,0 +1,21 @@
+<product-details [itemDetails]="item" [modalImgUrl]="modalImgUrl"></product-details>
+<div *ngIf="showFooter" class="footer-container">
+  <div id="footer">
+    <div class="control">Select</div>
+    <div class="footer-scroll">
+      <div class="html">
+
+        <div
+        *ngFor="let item of subCatItems.item"
+        class="footer-choice cat"
+        [ngStyle]="{'background-image': 'url('+item.img_url+')'}"
+        (click)="showProducts(item, subCatItems.name)">
+          <span>
+            <span>{{ item.name }}</span>
+          </span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

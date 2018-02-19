@@ -1,0 +1,66 @@
+<div *ngIf="itemDetails" id="enlargeModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-capitalize">{{ itemDetails.name }}</h5>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <img #ModalImg src="{{ modalImgUrl }}" width="100%">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+
+  <div class="row">
+
+    <div class="col-md-9">
+
+      <div *ngIf="showDetails" class="product-wrapper">
+        <div class="product-details">
+          <h2>{{ itemDetails.name }}</h2>
+          <div class="product-image">
+            <img #ProductImg src="{{ itemDetails.img_url_large }}">
+            <span class="expand-image" data-toggle="modal" data-target="#enlargeModal">
+              <i class="fa fa-expand"></i>
+            </span>
+          </div>
+          <div class="">
+            <h2 class="price">{{ itemDetails.price | currency }}</h2>
+            <a class="btn btn-success" (click)="addToCart()">
+              <strong>Add to Cart</strong>
+            </a>
+          </div>
+          <br>
+          <div class="options">
+            <img src="{{ itemDetails.img_url }}" (click)="changeProductImage(itemDetails.img_url, ProductImg)">
+            <img src="{{ itemDetails.img_url_large }}" (click)="changeProductImage(itemDetails.img_url_large, ProductImg)">
+          </div>
+          <div class="clear"></div>
+          <div class="info">
+            <div>
+              <div class="tab" [ngClass]="{'active':activeTab===1}" (click)="activeTab=1">Description</div>
+              <div class="tab" [ngClass]="{'active':activeTab===2}" (click)="activeTab=2">Our Review</div>
+            </div>
+            <div class="tab-content tab-info-content" [ngClass]="{'hide':activeTab===2}">
+              <p>{{ itemDetails.name }} Descripton</p>
+            </div>
+            <div class="tab-content tab-review-content" [ngClass]="{'hide':activeTab===1}">
+              <p>{{ itemDetails.name }} Review</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-md-3 margin-top-30">
+      <cart [selectedCategories]="selectedCategories" [cartTotalAmount]="cartTotalAmount">
+      </cart>
+    </div>
+
+  </div>
+
+</div>
