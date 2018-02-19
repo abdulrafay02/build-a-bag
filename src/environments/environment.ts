@@ -6,8 +6,8 @@
 export const environment = {
   production: false,
   amazonCredentials: {
-    awsId: 'AKIAI73KEPDOOHILE2PA',
-    secret: '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',
-    affliateId: 'Emedpack-20'
+    awsId: 'AKIAI7VTNJBUMESZP2SA',
+    secret: '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',
+    affliateId: 'emedpack02-20'
   }
 };
